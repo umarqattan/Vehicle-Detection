@@ -1,13 +1,21 @@
 **Vehicle Detection Project**
 
-The goals / steps of this project are the following:
+## Udacity Self Driving Car Engineer Nanodegree Project:
 
-* Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
-* Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
-* Note: for those first two steps don't forget to normalize your features and randomize a selection for training and testing.
-* Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
-* Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
-* Estimate a bounding box for vehicles detected.
+### Vehicle Detection
+### Goal
+
+###The goal of this project is to design and implement software pipeline to detect vehicles in a video. As a result, this Jupyter notebook should be able to playback an .mp4 file of a car driving down the highway, identifying all vehicles in its view with bounding boxes.
+
+### Introduction
+### Vehicle Detection Pipeline
+
+1. Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images.
+2. Train a Linear Support Vector Machine (SVM) Classifier.
+3. Search for vehicles in a given .mp4 video frame using a sliding-window technique on the Linear SVM Classifier.
+4. Because the sliding-window technique makes duplicate detections of vehicles (changing window sizes to identify small to large vehicles in a given video frame), create a heat map of detected vehicles, rejecting those beyond a certain threshold.
+5. Draw bounding boxes around detected vehicles from the heat map and display it on the given video frame.
+6. Finally, playback the video to see the detected vehicles!
 
 [//]: # (Image References)
 [image1]: ./examples/car_not_car.png
@@ -84,9 +92,9 @@ The above code is located in the middle of the 2nd cell.
 
 I decided to search random window positions with scales ranging between 1.0 and 3.0 in increments of 0.5:
 
-ystarts    = [400,416,400,432,400,432,400,464]
-ystops     = [464,480,496,528,528,560,596,660]
-scales     = [1.0,1.0,1.5,1.5,2.0,2.0,3.5,3.5]
+### ystarts    = [400,416,400,432,400,432,400,464]
+### ystops     = [464,480,496,528,528,560,596,660]
+### scales     = [1.0,1.0,1.5,1.5,2.0,2.0,3.5,3.5]
 
 The above positions and scales are located under the #TEST DRAW BOXES# comment in the 3rd cell.
 
