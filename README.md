@@ -118,7 +118,22 @@ Here's a [link to my video result](./project_video_out.mp4)
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
+I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected. Code to implmement this is located in the 3rd cell of the Jupyter notebook:
+
+# TEST HEAT MAP THRESHOLD #
+labels = label(heatmap_img)
+plt.title("Heat Mapped Boxes")
+plt.figure(figsize=(10,10))
+plt.imshow(labels[0], cmap='gray')
+print('Found', labels[1], 'cars.')
+
+# TEST DRAW LABELED BOXES #
+draw_img, rect = draw_labeled_bboxes(np.copy(test_img), labels)
+plt.title("Grayed Threshold Heat Mapped Boxes")
+plt.figure(figsize=(10,10))
+plt.imshow(draw_img)
+plt.title("Refined Identified Vehicles")
+
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `label()` and the bounding boxes then overlaid on the last frame of video:
 
@@ -132,7 +147,13 @@ Here's an example result showing the heatmap from a series of frames of video, t
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
 ![alt text][image7]
 
+Here is the code to run the proc_frame function over a series of frames in the input video:
 
+# TEST PROJECT_VIDEO.MP4 #
+test_out_file = 'project_video_out.mp4'
+clip_test = VideoFileClip('project_video.mp4')
+clip_test_out = clip_test.fl_image(process_frame)
+%time clip_test_out.write_videofile(test_out_file, audio=False)
 ---
 
 ### Discussion
