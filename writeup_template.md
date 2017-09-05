@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 [video1]: ./project_video_out.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
-###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
+### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
 
@@ -142,10 +142,10 @@ Some drawbacks to my solution include the fact that there were some test images 
 
 ### References
 
-https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013
-http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html
-http://scikit-learn.org/stable/modules/svm.html
-http://scikit-learn.org/stable/model_selection.html#model-selection
-http://scikit-learn.org/stable/modules/cross_validation.html#cross-validation
-http://scikit-learn.org/stable/modules/preprocessing.html#preprocessing
+1. https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013
+2. http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html
+3. http://scikit-learn.org/stable/modules/svm.html
+4. http://scikit-learn.org/stable/model_selection.html#model-selection
+5. http://scikit-learn.org/stable/modules/cross_validation.html#cross-validation
+6. http://scikit-learn.org/stable/modules/preprocessing.html#preprocessing
 
