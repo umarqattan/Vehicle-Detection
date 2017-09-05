@@ -2,7 +2,6 @@
 
 ## Udacity Self Driving Car Engineer Nanodegree Project:
 
-### Vehicle Detection
 ### Goal
 
 The goal of this project is to design and implement software pipeline to detect vehicles in a video. As a result, this Jupyter notebook should be able to playback an .mp4 file of a car driving down the highway, identifying all vehicles in its view with bounding boxes.
