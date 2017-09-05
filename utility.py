@@ -16,7 +16,7 @@ from scipy.ndimage.measurements import label
 # matplotlib imports
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
-%matplotlib inline
+
 
 # python movie imports
 from moviepy.editor import VideoFileClip
@@ -25,6 +25,8 @@ from IPython.display import HTML
 svc = LinearSVC()
 
 
+
+# Code Gathered from Udacity Self Driving Car Engineer Lessons
 def get_hog_features(img, orient,pix_per_cell, cell_per_block, 
                         vis=False, feature_vec=True):
     
@@ -214,8 +216,6 @@ def draw_labeled_bboxes(img, labels):
     # Return the image and final rectangles
     return img, rects
 
-
-
 def process_frame(img):
 
 
@@ -234,7 +234,7 @@ def process_frame(img):
                            orient, pix_per_cell, cell_per_block, None, None)
         rectangles.append(rectangle)
 
-    rectangles = [item for sublist in rectangles for item in sublist] 
+    rectangles = [i for l in rectangles for i in l] 
     
     heatmap_img = np.zeros_like(img[:,:,0])
     heatmap_img = add_heat(heatmap_img, rectangles)
